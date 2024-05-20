@@ -1,0 +1,41 @@
+{% extends "lays.html" %}
+{% block title %}
+    XWebCHats
+{% endblock title %}
+{% block body %}
+    {% if name %}
+        <div class="container" style="color: #0000007b;border: 1px solid #333;padding: 8px 12px;background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);" >
+        {% if error %}
+            <h3>Error {{ error }}</h3>
+        {% endif %}
+        {% if message %}
+            <h3>Message: {{ message }}.</h3>
+        {% endif %}
+            <h1 class="c">Home page</h1>
+            <h1 class="c">hello,{{ name }}</h1>
+            <h2 class="c">Email: {{ mail }}</h2>
+            <form action="/logout" method="get">
+                <button action="submit">Log out.</button>
+            </form>
+        </div>  
+    {% else %}
+        <div class="container" style="color: #0000007b;border: 1px solid #333;padding: 8px 12px;background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);" >
+            <h1 class="c">Home page</h1>
+            {% if error %}
+                <h3>Error {{ error }}</h3>
+            {% endif %}
+            {% if message %}
+                <h3>Message: {{ message }}.</h3>
+            {% endif %}
+            <form action="/login" method="get">
+                <p class="c">You aren't signed in</p>
+                <button action="submit">Sign in.</button>
+            </form>
+            <form action="/register" method="get">
+                <p class="c">I Don't have an Account.\n</p>
+                <button action="submit">Register.</button>
+            </form>
+        </div>        
+    {% endif %}
+{% endblock body %}
+
