@@ -1,0 +1,15 @@
+{% extends "lays.html" %}
+{% block title %}
+    XWebCHats login
+{% endblock title %}
+{% block body %}
+    <div class="container" style="color: #0000007b;border: 1px solid #333;padding: 80px 80px;background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);" >
+        <form action="/login" method="post">
+            <h1 style="text-align: center;">Login Page</h1>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Log In</button>
+        </form>
+    </div>
+
+{% endblock body %} 

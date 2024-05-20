@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .i {
+            width:50px;
+            height:50px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 10px; /* Adjust as needed for spacing */
+            z-index: 1000; /* Ensure it stays on top of other elements */
+        }
+        .c{
+            margin: 50px; /* Adjust as needed for spacing */
+            color: rgb(15, 5, 52);
+            text-align: center;
+        };
+    </style>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{{ url_for('static',filename='xwch.png') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title%}
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <a href="/" target="_self">
+        <img class="i" src="{{ url_for('static',filename='xwch.png') }}" alt="Web Logo">
+    </a>
+    {% block body%}
+    {% endblock %}
+</body>
+</html>
